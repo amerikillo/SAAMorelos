@@ -1,0 +1,204 @@
+<%-- any content can be specified here e.g.: --%>
+<%
+%>
+<%@ page pageEncoding="UTF-8" %>
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span clss="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/SAAMorelos/main_menu.jsp">Inicio</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entradas<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <%
+                            if (tipo.equals("2") || tipo.equals("3") || tipo.equals("1")) {
+                        %>
+                        <li><a href="/SAAMorelos/SAP/cargarOrdenSAP.jsp">Subir Orden SAP</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/SAAMorelos/capturaISEM.jsp">Captura de Órdenes de Compra</a></li>
+                        <li class="divider"></li>
+
+                        <li><a href="/SAAMorelos/captura.jsp">Entrada Manual</a></li>
+                        <li><a href="/SAAMorelos/compraAuto2.jsp">Entrada Automática OC</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/SAAMorelos/hh/compraAuto3.jsp">HANDHELD | Entrada Automática OC</a></li>
+                        <li class="divider"></li-->
+                            <%
+                                }
+                                if (tipo.equals("2") || tipo.equals("3") || tipo.equals("5")) {
+                            %>
+                        <li><a href="/SAAMorelos/verificarCompraAuto.jsp">Verificar Remisión</a></li>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/reimpresion.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Reimpresión de Remisiones</a></li>
+                        <li><a href="#"  onclick="window.open('/SAAMorelos/ordenesCompra.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Órdenes de Compras</a></li>
+                        <li><a href="#"  onclick="window.open('/SAAMorelos/kardexClave.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Kardex Claves</a></li>
+                        <!--li><a href="#"  onclick="window.open('/SAAMorelos/creaMarbetes.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Generar Marbetes</a></li-->
+
+                        <%
+                            }
+                        %>
+                        <li><a href="#"  onclick="window.open('/SAAMorelos/hh/ubicacionesConsultas.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Ubicaciones</a></li>
+
+                        <%
+                            if (tipo.equals("5") || tipo.equals("3")) {
+                        %>
+                        <li class="divider"></li>
+                        <li><a href="/SAAMorelos/hh/insumoNuevoRedist.jsp">Redistribución HH</a></li>
+                        <li class="divider"></li>
+                            <%
+                                }
+                            %>
+                            <%
+                                if (usua.equals("oscar")) {
+                            %>
+                        <li class="divider"></li>
+                        <li><a href="#"  onclick="window.open('/SAAMorelos/devolucionesInsumo.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Cambio Físico</a></li>
+                        <li class="divider"></li>
+                            <%
+                                }
+                            %>
+                        <!--li><a href="#"  onclick="window.open('/SAAMorelos/modula/avisosIngreso.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Modula - Avisos de Ingreso</a></li>
+                        <!--li><a href="#"  onclick="window.open('/SAAMorelos/Ubicaciones/index_Marbete_resto.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Marbete de Resto</a></li-->
+                        <!--li><a href="#"  onclick="window.open('verDevolucionesEntrada.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Imprimir Devoluciones</a></li>
+                        <li><a href="#"  onclick="window.open('devolucionesInsumo.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Devolver</a></li-->
+
+                    </ul>
+                </li>
+                <%
+                    if (tipo.equals("5") || tipo.equals("7") || tipo.equals("2")) {
+                %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Facturación<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <%
+                            if (tipo.equals("7")) {
+                        %>
+                        <li><a href="/SAAMorelos/requerimiento.jsp">Carga de Requerimiento</a></li>
+                        <li class="divider"></li>
+                            <%
+                                }
+                            %>
+                            <%
+                                if (tipo.equals("5") || tipo.equals("7") || tipo.equals("2")) {
+                            %>
+                        <li><a href="/SAAMorelos/factura.jsp">Facturación Automática</a></li>
+                        <li><a href="/SAAMorelos/facturacionManual.jsp">Facturación Manual</a></li>
+                        <li><a href="/SAAMorelos/facturacionRural/verReqsWeb.jsp">Facturación Web</a></li>
+                        <li class="divider"></li>
+                        <!--li><a href="/SAAMorelos/validacionSurtido.jsp">Validación Surtido</a></li>
+                        <li><a href="/SAAMorelos/validacionAuditores.jsp">Validación Auditores</a></li-->
+                        <!--li><a href="#"  onclick="window.open('modula/modulaHistorico.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Histórico Modula</a></li-->
+                        <%
+                            }
+                        %>
+                        <%
+                            if (tipo.equals("7")) {
+                        %>
+                        <li><a href="#"  onclick="window.open('verDevoluciones.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Devoluciones</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/SAAMorelos/reimp_factura.jsp">Administrar Remisiones</a></li>
+                        <li><a href="/SAAMorelos/reimpConcentrado.jsp">Reimpresión Folios a Remisionar</a></li>
+                        <li><a href="/SAAMorelos/comparativoGlobal.jsp">Folios a Remisionar</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/SAAMorelos/Secuencial.jsp">Generar Secuencial</a></li>
+                        <li><a href="/SAAMorelos/RelacionarF.jsp">Relacionar Facturas</a></li>
+
+                        <%
+                            }
+                        %>
+                    </ul>
+                </li>
+                <%
+                    }
+                %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Surtido<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/SAAMorelos/remisionarCamion.jsp">Generar Remisiones</a></li>
+                    </ul>
+                </li>
+                <!--li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inventario<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"  onclick="window.open('Ubicaciones/Inventario.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Inventario</a></li>
+                <%
+                    if (tipo.equals("5") || tipo.equals("3") || tipo.equals("7") || tipo.equals("2")) {
+                %>
+            <li><a href="#"  onclick="window.open('movimientosUsuarioInventario.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Movimientos por Usuario</a></li>
+            <li><a href="#"  onclick="window.open('semaforo.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Semaforización</a></li>
+                <%
+                    }
+                %>
+            <li><a href="#"  onclick="window.open('invenCiclico/nuevoInventario.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Inventario Ciclico</a></li>
+        </ul>
+    </li--> <%
+        if (tipo.equals("5") || tipo.equals("7") || tipo.equals("2") || tipo.equals("8") || tipo.equals("9")) {
+                %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Operaciones<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <%
+                            if (tipo.equals("8")) {
+                        %>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/operaciones/adminRutas.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Administrar Rutas</a></li>
+                            <%
+                                }
+                            %>
+                        <li><a href="/SAAMorelos/operaciones/verRutas.jsp">Consultar Rutas</a></li>
+                    </ul>
+                </li>
+                <%
+                    }
+                %>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catálogos<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="window.open('/SAAMorelos/medicamento.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de Medicamento</a></li>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/catalogo.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de Proveedores</a></li>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/marcas.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de Marcas</a></li>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/modula/catalogoCB.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de CB</a></li>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/catalogoUnidades.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de Unidades</a></li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catálogos ISEM<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="window.open('/SAAMorelos/facturacion/catalogoArtIS.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de Insumo ISEM</a></li>
+                        <li><a href="#" onclick="window.open('/SAAMorelos/facturacion/catalogoUniDis.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Catálogo de Unidades ISEM</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes Txt<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/SAAMorelos/Secuencial.jsp">Generar Secuencial</a></li>
+                        <li><a href="/SAAMorelos/RelacionarF.jsp">Relacionar Facturas</a></li>
+                        <li><a href="/SAAMorelos/CatalogoIsem/Txt.jsp">TXT</a></li>
+                        <li><a href="/SAAMorelos/ReportesPuntos/GeneraReporte.jsp">Reportes A</a></li>                        
+                    </ul>
+                </li>
+                <!--li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="window.open('Entrega.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Fecha de Recibo en CEDIS</a></li> 
+                        <li><a href="#" onclick="window.open('historialOC.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Historial OC</a></li>
+                        <li><a href="#" onclick="window.open('ReporteF.jsp', '', 'width=1200,height=800,left=50,top=50,toolbar=no')">Reporte por Fecha Proveedor</a></li>
+
+                    </ul>
+                </li-->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> <%=usua%></a></li>
+                <li class="active"><a href="/SAAMorelos/index.jsp"><span class="glyphicon glyphicon-log-out"></span></a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
